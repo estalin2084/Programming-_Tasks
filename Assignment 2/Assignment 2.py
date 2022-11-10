@@ -190,10 +190,10 @@ print(("{}").format(meals_price.get(order_data['MealNumber'], {}).get("Name") + 
 print("Discount",percentage,"\t" "\t" "\t" "\t" "\t" "\t",("${:.2f}").format(applied_disc)) #this prints the percentage discounted of the order
 if order_data["Student"] == True: #if the student status is true it will print the 10% aditional discount
     print("10%" " Student savings","\t" "\t" "\t"  "\t", " ", " ", " ", ("- ${:.2f}").format(applied_student_disc))  #if the student status is true it will print the 10% aditional discount
-print("\t" "\t" "\t" "\t","Subtotal" ," ", "\t", "\t", ("${:.2f}").format(total()-applied_disc)) #this prints the subtotal of the recepit
+print("\t" "\t" "\t" "\t","Subtotal" ," ", "\t", "\t", ("${:.2f}").format(discount())) #this prints the subtotal of the recepit
 print("\t" "\t" "\t" "\t", "HST 13% ","\t" "\t",("${:.2f}").format(discount() * .13)) #this prints the tax
 
 print("\t" "\t" "\t" "\t" " " "Delivery Fee",  " \t"  "\t", ("${:.2f}").format(order_data['DeliveryFee']) if order_data['Delivery'] == True else "")
-print("\t" "\t" "\t" "\t" " " "Tips",  " \t"  "\t", ("${:.2f}").format(order_data['Tips']) if order_data['Delivery'] == True else "")
+print("\t" "\t" "\t" "\t" " " "Tips",  " \t" "\t" "\t", ("${:.2f}").format(order_data['Tips']) if order_data['Delivery'] == True else "")
 print("\t" "\t" "\t" "\t" " " "Total",  " \t"  "\t", ("${:.2f}").format(discount() * 1.13 + order_data["DeliveryFee"] + float(order_data["Tips"]), "CAD")) #this prints the grand total of the recepit
 print("-" *75) #this creates the format of my recepit and is the last line 
