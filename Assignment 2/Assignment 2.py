@@ -6,7 +6,7 @@
 
 
 
-from time import sleep 
+
 
 def total(): #This funcion calculates the total of price and meal quantity
     return float(order_data['MealQuantity']) * float(order_data['MealPrice'])
@@ -175,7 +175,7 @@ print("") #this creates an space  #this calls the function discount
 discount()
 print(order_data["Delivery"])
 print(order_data["Tips"])
-sleep(6)
+
 print("{0} {1}." .format(customer_Data["FirstName"], customer_Data["LastName"])) #this prints the customer first and last name before the receipt
 print("{0}" .format(customer_Data["Address"])) #this print the address of the customer
 print("{0}, {1}, {2}. " .format(customer_Data["City"], customer_Data["Province"], customer_Data["PostalCode"])) #this prints the city, province and postal code of the customer
@@ -195,5 +195,5 @@ print("\t" "\t" "\t" "\t", "HST 13% ","\t" "\t",("${:.2f}").format(discount() * 
 
 print("\t" "\t" "\t" "\t" " " "Delivery Fee",  " \t"  "\t", ("${:.2f}").format(order_data['DeliveryFee']) if order_data['Delivery'] == True else "")
 print("\t" "\t" "\t" "\t" " " "Tips",  " \t"  "\t", ("${:.2f}").format(order_data['Tips']) if order_data['Delivery'] == True else "")
-print("\t" "\t" "\t" "\t" " " "Total",  " \t"  "\t", ("${:.2f}").format(discount() * 1.13 + order_data["DeliveryFee"] + order_data["Tips"]), "CAD") #this prints the grand total of the recepit
+print("\t" "\t" "\t" "\t" " " "Total",  " \t"  "\t", ("${:.2f}").format(discount() * 1.13 + order_data["DeliveryFee"] + float(order_data["Tips"]), "CAD")) #this prints the grand total of the recepit
 print("-" *75) #this creates the format of my recepit and is the last line 

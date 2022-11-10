@@ -26,9 +26,8 @@ answer = input("Enter your choice: ") #This input will allow the user to choose 
 
 def calc_square(side_a): #This function calculates the perimeter and the area of the square.
     perimeter_square= (side_a * 4)
-    square_area=(side_a * side_a)
     print("The perimeter of your square is" ,perimeter_square , " cm2")
-    print ("The area of your square is", square_area, " cm2")
+    
 
 def calc_rectangle(length_Rectangle, height_Rectangle): #This functionn calculates the area and perimeter of a Rectangle.
     area_Rectangle = length_Rectangle * height_Rectangle
@@ -50,8 +49,7 @@ if answer.strip() == "1": #This if takes the input of the user when selecting nu
 
 elif answer.strip() == "2": #This elif takes the input of the user when selecting number 2, and trim the spaces.
     side_a= float(input("Please type the side A of your square in centimeters: "))
-    side_b= float(input("Please type the side B of your square in centimeters: "))
-    calc_square(side_a, side_b)
+    calc_square(side_a)
 
 elif answer.strip() == "3": #This elif takes the input of the user when selectecting number 3, and trim the spaces.
     radius = float(input("Please type the radius of your circle in centimeters: "))
