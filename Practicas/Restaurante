@@ -1,0 +1,23 @@
+def getUserRatings():
+
+    restourantRatings = {}
+    print("Please enter name and rating of five restaurants.")   
+
+    i = 1
+    while i <= 5:        
+        print("\nRestaurant #{}:".format(i))
+
+        name = input("- Enter the name of the place: ")
+        rating = int(input("- Enter the rating: " ))
+
+        while True:   
+            if not(rating > 0 and rating <= 5):
+                rating = int(input("Invalid value: enter a whole number from 1 to 5, included: "))
+            else:
+                restourantRatings[name] = rating
+                break
+        i += 1
+
+    return restourantRatings
+
+getUserRatings()
